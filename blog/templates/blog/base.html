@@ -9,7 +9,7 @@
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <meta name="viewport" content="width=device-width">\
-
+        <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
         <style>
                body {
             background-color: red;
@@ -27,10 +27,16 @@
             div{
                 background-color: #fff;
                 transition-property: background-color;
-                transition-duration: 2s;
+            }
+            div.div{
+                background-color: #fff;
+                transition-property: background-color;
             }
             div:hover{
-                background-color: red;
+                background-color: purple;
+            }
+            div.div:hover{
+                background-color: yellow;
             }
         </style>
     </head>
@@ -44,12 +50,6 @@
             <div class="col-md-8">
 
             {% block content %}
-                    <ul class="nav">
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Блог</a></li>
-                    <li><a href="#">Контакты</a></li>
-                    <li><a href="#">О сайте</a></li>
-                    </ul>
                  {% for post in posts %}
                     <div class="post">
                         <div class="date">
